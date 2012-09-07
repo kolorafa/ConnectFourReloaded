@@ -1,0 +1,49 @@
+debug: true
+animateGame: true
+broadcastMsg: true
+
+messageLang: en
+messages:
+  en:
+    startedgame: Players {player} and {player2} playing ConnectFour /cf
+    wonthegame: Player {won} won with {lose} in ConnectFour /cf
+    notYourMove: Oponent Move
+    invitedBy: Player {player} invites you to game ConnectFour, to start /cf accept, /cf for help
+    youWin: You have win
+    youLose: You lose
+    playerquit: Player {player} quit game
+    invTitle: Connect four game with {player}
+    playergoneoff: Player gone offline
+    playernotfound: Player not found
+    accepting: Accepting game with {player}, game starting
+    rejecting: Rejecting game with {player}
+    accepted: Player {player} accepted invitation, game started
+    rejected: Player {player} rejected invitation to game
+    sendinginv: Sending invite to {player}
+    inviteself: You cannot invite yourself
+    help:
+      - Connect four game
+      - Player drops wool from top, first one drop 4 wool in line wins
+      - To invite type /cf PLAYERNAME
+  pl:
+    startedgame: Gracze {player} i {player2} zaczeli grac w Czworki /cf
+    wonthegame: Gracz {won} wygral z {lose} w Czworki /cf
+    notYourMove: Przeciwnik ma ruch
+    invitedBy: Gracz {player} zaprasza cie na gre, by akceptowac wpisz /cf accept, wpisz /cf po instrukcje
+    youWin: Wygrales
+    youLose: Przegrales
+    playerquit: Gracz {player} zakonczyl gre
+    invTitle: Gra w Czworki z {player}
+    playergoneoff: Gracza niema juz w grze
+    playernotfound: Gracz nie znaleziony
+    accepting: Akceptujesz gre z {player}, gra rozpoczyna sie
+    rejecting: Odrzucasz gre z {player}
+    accepted: Gracz {player} zaakceptowal zaproszenie, gra rozpoczyna sie
+    rejected: Gracz {player} odrzucil zaproszenie
+    sendinginv: Wysylasz zaproszenie do {player}
+    inviteself: Nie mozesz zaprosic samego siebie
+    help:
+      - Gra w Czworki
+      - Gracz zrzuca welne na sam dol w danej kolumnie klikajac na puste pole
+      - Wygrywa gracz ktory pierwszy ulozy 4 w jednej lini
+      - By zaprosic do gry wpisz /cf NAZWAGRACZA
