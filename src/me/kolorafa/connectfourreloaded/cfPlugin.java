@@ -64,7 +64,6 @@ public class cfPlugin extends JavaPlugin implements Listener {
         getConfig().options().copyDefaults(true);
         saveConfig();
     }
-
     Map<String, String> invites;
 
     @Override
@@ -77,14 +76,19 @@ public class cfPlugin extends JavaPlugin implements Listener {
             if (args.length == 0) {
                 sender.sendMessage((getConfig().getStringList("messages." + getConfig().getString("messageLang") + ".help").toArray(new String[0])));
             } else if (args[0].equalsIgnoreCase("accept")) {
-                Player p = getServer().getPlayerExact(invites.get(player.getName()));
-                invites.remove(player.getName());
-                if (p == null) {
-                    sender.sendMessage(getMessage("playergoneoff").replace("{player}", p.getDisplayName()));
+                String pname = invites.get(player.getName());
+                if (pname == null) {
+                    sender.sendMessage(getMessage("donthaveinv"));
                 } else {
-                    sender.sendMessage(getMessage("accepting").replace("{player}", p.getDisplayName()));
-                    p.sendMessage(getMessage("accepted").replace("{player}", p.getDisplayName()));
-                    new cfGame(this, player, p).startGame();
+                    Player p = getServer().getPlayerExact(pname);
+                    invites.remove(player.getName());
+                    if (p == null) {
+                        sender.sendMessage(getMessage("playergoneoff").replace("{player}", p.getDisplayName()));
+                    } else {
+                        sender.sendMessage(getMessage("accepting").replace("{player}", p.getDisplayName()));
+                        p.sendMessage(getMessage("accepted").replace("{player}", p.getDisplayName()));
+                        new cfGame(this, player, p).startGame();
+                    }
                 }
             } else if (args[0].equalsIgnoreCase("reject")) {
                 Player p = getServer().getPlayerExact(invites.get(player.getName()));

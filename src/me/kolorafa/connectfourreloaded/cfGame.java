@@ -34,7 +34,7 @@ public class cfGame implements Listener {
     boolean kolejka;
     boolean gameLocked;
     boolean working = true;
-    int[][] plansza = new int[15][15];//new int[7][6];
+    int[][] plansza = new int[7][7];//new int[7][6];
     ItemStack[] inv1;
     ItemStack[] inv2;
 
@@ -224,9 +224,27 @@ public class cfGame implements Listener {
         plugin.getServer().getScheduler().scheduleAsyncDelayedTask(plugin, new cfWinAni(this), 1L);
     }
 
+//    private void visualize(int x, int y){
+//                gameLocked = true;
+//                try {
+//                    int old = plansza[x][y];
+//                    plansza[x][y] = 3;
+//                    renderGame(p1);
+//                    renderGame(p2);
+//                    plansza[x][y] = old;
+//                    Thread.sleep(1000);
+//
+//
+//                } catch (InterruptedException ex) {
+//                    Logger.getLogger(cfGame.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//                gameLocked = false;
+//        
+//    }
+//    
     private boolean check2(int x, int y, int player) {
         int stan = 0;
-        while (y > 0 && x < plansza.length && y < plansza[0].length) {
+        while (y >= 0 && x < plansza.length && y < plansza[0].length) {
             if (plansza[x][y] == player) {
                 ++stan;
             } else {
@@ -251,7 +269,7 @@ public class cfGame implements Listener {
 
     private boolean check3(int x, int y, int player) {
         int stan = 0;
-        while (y > 0 && x < plansza.length && y < plansza[0].length) {
+        while (y >= 0 && x < plansza.length && y < plansza[0].length) {
             if (plansza[x][y] == player) {
                 ++stan;
             } else {

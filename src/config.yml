@@ -21,6 +21,7 @@ messages:
     rejected: Player {player} rejected invitation to game
     sendinginv: Sending invite to {player}
     inviteself: You cannot invite yourself
+    donthaveinv: You don't have waiting invitations, try inviting someone :)
     help:
       - Connect four game
       - Player drops wool from top, first one drop 4 wool in line wins
@@ -42,6 +43,7 @@ messages:
     rejected: Gracz {player} odrzucil zaproszenie
     sendinginv: Wysylasz zaproszenie do {player}
     inviteself: Nie mozesz zaprosic samego siebie
+    donthaveinv: Nie masz oczekujacych zaproszen
     help:
       - Gra w Czworki
       - Gracz zrzuca welne na sam dol w danej kolumnie klikajac na puste pole
