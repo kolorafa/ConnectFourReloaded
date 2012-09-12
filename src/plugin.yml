@@ -11,5 +11,5 @@ commands:
     connectfourreloaded:
         usage: "Usage: /cf [player]"
         aliases: cf
-#        permission: ConnectFourReloaded.play
+        permission: ConnectFourReloaded.play
         description: To play ConnectFour game
