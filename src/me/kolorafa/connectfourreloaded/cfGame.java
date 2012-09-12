@@ -201,10 +201,14 @@ public class cfGame implements Listener {
 
     public void startGame() {
         registerEvenets();
-        Inventory p1ii = Bukkit.createInventory(p1, 54, plugin.getMessage("invTitle").replace("{player}", p2.getDisplayName()).substring(0, 31));
+        String invName = plugin.getMessage("invTitle").replace("{player}", p2.getDisplayName());
+        if(invName.length()>30)invName=invName.substring(0, 30);
+        Inventory p1ii = Bukkit.createInventory(p1, 54, invName);
         renderGame(p1ii);
         p1.openInventory(p1ii);
-        Inventory p2ii = Bukkit.createInventory(p2, 54, plugin.getMessage("invTitle").replace("{player}", p1.getDisplayName()).substring(0, 31));
+        invName = plugin.getMessage("invTitle").replace("{player}", p1.getDisplayName());
+        if(invName.length()>30)invName=invName.substring(0, 30);
+        Inventory p2ii = Bukkit.createInventory(p2, 54, invName);
         renderGame(p2ii);
         p2.openInventory(p2ii);
         kolejka = false;
