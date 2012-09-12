@@ -4,31 +4,15 @@
  */
 package me.kolorafa.connectfourreloaded;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.net.MalformedURLException;
-import java.net.ProxySelector;
-import java.net.URL;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.text.PlainDocument;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.InventoryView;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -40,7 +24,7 @@ public class cfPlugin extends JavaPlugin implements Listener {
 
     public final Logger logger = Logger.getLogger("Minecraft");
     PluginDescriptionFile pdffile;
-
+    
     public void log(String text) {
         if (getConfig().getBoolean("debug")) {
             logger.log(Level.INFO, "[" + pdffile.getName() + "] DEBUG: " + text);
@@ -62,7 +46,7 @@ public class cfPlugin extends JavaPlugin implements Listener {
 
     private void loadConfiguration() {
         getConfig().options().copyDefaults(true);
-        saveConfig();
+        saveConfig();     
     }
     Map<String, String> invites;
 
@@ -86,7 +70,7 @@ public class cfPlugin extends JavaPlugin implements Listener {
                         sender.sendMessage(getMessage("playergoneoff").replace("{player}", p.getDisplayName()));
                     } else {
                         sender.sendMessage(getMessage("accepting").replace("{player}", p.getDisplayName()));
-                        p.sendMessage(getMessage("accepted").replace("{player}", p.getDisplayName()));
+                        p.sendMessage(getMessage("accepted").replace("{player}", ((Player)sender).getDisplayName()));
                         new cfGame(this, player, p).startGame();
                     }
                 }

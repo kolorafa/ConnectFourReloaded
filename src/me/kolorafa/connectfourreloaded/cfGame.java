@@ -6,20 +6,17 @@ package me.kolorafa.connectfourreloaded;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Spring;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
-import org.bukkit.event.inventory.InventoryEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -37,6 +34,14 @@ public class cfGame implements Listener {
     int[][] plansza = new int[7][7];//new int[7][6];
     ItemStack[] inv1;
     ItemStack[] inv2;
+
+    enum gameStatus {
+
+        GAME_RUNNING,
+        GAME_PROCESSING,
+        GAME_ENDED
+    }
+    gameStatus status = gameStatus.GAME_RUNNING;
 
     public cfGame(cfPlugin plugin, Player p1, Player p2) {
         this.plugin = plugin;
@@ -196,10 +201,10 @@ public class cfGame implements Listener {
 
     public void startGame() {
         registerEvenets();
-        Inventory p1ii = Bukkit.createInventory(p1, 54, plugin.getMessage("invTitle").replace("{player}", p2.getDisplayName()));
+        Inventory p1ii = Bukkit.createInventory(p1, 54, plugin.getMessage("invTitle").replace("{player}", p2.getDisplayName()).substring(0, 31));
         renderGame(p1ii);
         p1.openInventory(p1ii);
-        Inventory p2ii = Bukkit.createInventory(p2, 54, plugin.getMessage("invTitle").replace("{player}", p1.getDisplayName()));
+        Inventory p2ii = Bukkit.createInventory(p2, 54, plugin.getMessage("invTitle").replace("{player}", p1.getDisplayName()).substring(0, 31));
         renderGame(p2ii);
         p2.openInventory(p2ii);
         kolejka = false;

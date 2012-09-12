@@ -12,7 +12,7 @@ messages:
     youWin: You have win
     youLose: You lose
     playerquit: Player {player} quit game
-    invTitle: Connect four game with {player}
+    invTitle: Connect four game
     playergoneoff: Player gone offline
     playernotfound: Player not found
     accepting: Accepting game with {player}, game starting
@@ -34,7 +34,7 @@ messages:
     youWin: Wygrales
     youLose: Przegrales
     playerquit: Gracz {player} zakonczyl gre
-    invTitle: Gra w Czworki z {player}
+    invTitle: Gra w Czworki
     playergoneoff: Gracza niema juz w grze
     playernotfound: Gracz nie znaleziony
     accepting: Akceptujesz gre z {player}, gra rozpoczyna sie

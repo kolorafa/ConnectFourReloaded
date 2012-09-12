@@ -1,6 +1,6 @@
 name: ConnectFourReloaded
 main: me.kolorafa.connectfourreloaded.cfPlugin
-version: 1.1
+version: 1.2
 description: Created from scratch based on old ConnectFour plugin
 author: kolorafa
 permissions:
@@ -11,5 +11,5 @@ commands:
     connectfourreloaded:
         usage: "Usage: /cf [player]"
         aliases: cf
-        permission: ConnectFourReloaded.play
+#        permission: ConnectFourReloaded.play
         description: To play ConnectFour game
